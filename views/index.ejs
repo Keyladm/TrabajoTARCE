@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content ="width=device-width, initial-scale = 1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+    <title> Hotel Gran Canaria</title>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1 class = "title">Hotel Gran Canaria</h1>
+    <br>
+    <p>Bienvenido a hotel Gran Canaria</p>
+    <button id="login"> Iniciar sesión </button>
+
+    <div class = "form-login" id = "form_login">
+      <div class="modal-sesion">
+        <h1> Inicio sesión </h1>
+        <input class="controls" type="text" name="usuario" value="" placeholder="Usuario">
+        <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña">
+        <input class="buttons" type="submit" name="" value="Ingresar">
+        <button class="buttons" id = "cancel_sesion"> Cancelar </button>
+        <p><a href="#">¿Olvidastes tu contraseña?</a></p>
+      </div>
+    </div>
+    <script>
+      const login = document.getElementById('login');
+      const modal = document.getElementById('form_login');
+      const cancel = document.getElementById('cancel_sesion');
+
+      login.addEventListener('click', () =>{
+          modal.classList.add('show');
+      });
+
+      cancel.addEventListener('click', () =>{
+          modal.classList.remove('show');
+      });
+    </script>
   </body>
 </html>
