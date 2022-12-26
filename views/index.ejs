@@ -8,14 +8,79 @@
     <title> Paradise Resort</title>
   </head>
   <body>
-    <div class = "logotipo">
+    <header id="cabecera">
+      <a href="/"><img class="logotipo" alt="logotipo" src="../img/Paradise_transparente.png"></a> 
+      <nav id="navegacion">
+
+          <ul id="izquierda">
+          <li class="listaNavegacion"><a href="/">Paradise Resort</a></li>
+          <li class="listaNavegacion"><a href="/">Instalaciones</a></li>
+          <li class="listaNavegacion"><a href="/">Ofertas</a></li>
+          
+          
+          
+          </ul>
+          <ul id="derecha">
+            <li class="listaNavegacion"><button class="login" id="login"> Iniciar sesión </button></li>
+            
+          </ul>
+             
+      </nav>
+  </header>
+    <!-- <div class = "logotipo">
       <img src = "../img/Paradise_transparente.png"></img>
+    </div> -->
+
+    <!--<button class="login" id="login"> Iniciar sesión </button>-->
+    <h1 class = "title">PARADISE RESORT</h1>
+    <h3 class = "title">Disfruta de unas vacaciones con encanto</h3>
+
+    <div class="slide">
+      <div class="slide-inner">
+          <input class="slide-open" type="radio" id="slide-1" 
+                name="slide" aria-hidden="true" hidden="" checked="checked">
+          <div class="slide-item">
+              <img src="https://casadelpoeta.es/wp-content/uploads/2019/09/Hoteles-con-encanto-en-Espa%C3%B1a.jpg">
+          </div>
+          <input class="slide-open" type="radio" id="slide-2" 
+                name="slide" aria-hidden="true" hidden="">
+          <div class="slide-item">
+              <img src="https://www.thalassocantabricolassirenas.es/images/slides/Home.030_Terraza_ThalassoCantabrico2020.jpg">
+          </div>
+          <input class="slide-open" type="radio" id="slide-3" 
+                name="slide" aria-hidden="true" hidden="">
+          <div class="slide-item">
+              <img src="https://i.blogs.es/caea6b/four-seasons-resort-punta-mita/1366_2000.jpeg">
+          </div>
+          <label for="slide-3" class="slide-control prev control-1">‹</label>
+          <label for="slide-2" class="slide-control next control-1">›</label>
+          <label for="slide-1" class="slide-control prev control-2">‹</label>
+          <label for="slide-3" class="slide-control next control-2">›</label>
+          <label for="slide-2" class="slide-control prev control-3">‹</label>
+          <label for="slide-1" class="slide-control next control-3">›</label>
+          <ol class="slide-indicador">
+              <li>
+                  <label for="slide-1" class="slide-circulo">•</label>
+              </li>
+              <li>
+                  <label for="slide-2" class="slide-circulo">•</label>
+              </li>
+              <li>
+                  <label for="slide-3" class="slide-circulo">•</label>
+              </li>
+          </ol>
+      </div>
     </div>
 
-    <button class="login" id="login"> Iniciar sesión </button>
-    <h1 class = "title">PARADISE RESORT</h1>
-    
-    <img src = "https://cdn.pixabay.com/photo/2017/03/09/06/30/pool-2128578_960_720.jpg" class = "piscina"></img>
+   <br>
+
+   
+   <div>
+    <h3 class="title">Visitenos en: </h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56491.65096411117!2d-15.605477746558877!3d27.756528673859776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc3f62bb27da5c45%3A0x682c6281a96f26a2!2s35100%20Maspalomas%2C%20Las%20Palmas!5e0!3m2!1ses!2ses!4v1672058573287!5m2!1ses!2ses" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+   </div> 
+    <!-- <img src = "https://cdn.pixabay.com/photo/2017/03/09/06/30/pool-2128578_960_720.jpg" class = "piscina"></img> -->
     
 
     <div class = "form-login" id = "form_login">
@@ -41,5 +106,14 @@
           modal.classList.remove('show');
       });
     </script>
+    <footer id="piePagina">
+     No dude en ponerse en contacto con nosotros
+     <br>
+     Teléfono: 928624536
+     <br>
+     Email: paradiseresort@gmail.com
+     <br>
+     Facebook: ParadiseResort
+    </footer>
   </body>
 </html>
