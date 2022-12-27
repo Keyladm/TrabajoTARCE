@@ -7,14 +7,37 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <title> Paradise Resort</title>
   </head>
+  
   <body>
+
+    <header id="cabecera_rest">
+      <a href="/">
+        <img class="logotipo" alt="logotipo" src="/img/paradise_transparente.png">
+      </a> 
+      
+      <h1>PARADISE RESORT RESTAURANT</h1>
+    </header>
+
+    <h3 class = "title">Disfruta de nuestros exquisitos platos</h3>
+
     <div id="menu">
-        <menu-card
-            title="Lasaña"
-            image="https://assets.unileversolutions.com/recipes-v2/232080.jpg">
+        <h1> Pastas </h1>
+        <menu-card 
+            v-for="(pasta, index) in pastas"
+            :key = "index"
+            :title = "pasta.title"
+            :image ="pasta.image">
+        </menu-card>
+        <h1> Pizzas </h1>
+        <menu-card 
+            v-for="(pizza, index) in pizzas"
+            :key = "index"
+            :title = "pizza.title"
+            :image ="pizza.image">
         </menu-card>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
-    <script src="../routes/menu.js"></script>
+    <script src="/web_comp/menu.js"></script>
   </body>
 </html>
+
