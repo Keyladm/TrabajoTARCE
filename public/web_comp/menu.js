@@ -1,4 +1,52 @@
-Vue.component("menu-card", {
+const template = document.createElement('template');
+template.innerHTML = `
+  <style>
+    h3 {
+      margin-left: 5%;
+      color: black;
+    }
+
+    .divCuadricula img{
+      width: 200px;
+      height: 150px ;
+    }
+
+    .divCuadricula{
+      width:40%;
+      display: table;
+      float: left;
+      text-align: center;
+      margin: 1%;
+      max-width: 20%;
+      height: 80px;
+    }
+
+  </style>
+  <div class="menu-card">
+    <div class ="divCuadricula">
+      <h3></h3>
+      <img  />     
+    </div> 
+  </div>
+`;
+
+class MenuWebComponent extends HTMLElement{
+
+  constructor(){
+    super();
+
+    this.attachShadow({ mode: 'open'});
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.shadowRoot.querySelector('h3').innerText = this.getAttribute('title');
+    this.shadowRoot.querySelector('img').src = this.getAttribute('image');
+  }
+
+}
+
+window.customElements.define("menu-card", MenuWebComponent);
+
+
+/*Vue.component("menu-card", {
     props: ["image", "title"],
     template: `
       <div class = "row">
@@ -41,5 +89,5 @@ Vue.component("menu-card", {
           image: 'https://recetinas.com/wp-content/uploads/2018/04/pizza-cuatro-quesos.jpg'}
       ]
     }
-  });
+  });*/
   
