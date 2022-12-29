@@ -7,27 +7,42 @@ template.innerHTML = `
     }
 
     .divCuadricula img{
-      width: 200px;
-      height: 150px ;
+      width: 230px;
+      height: 180px ;
     }
 
     .divCuadricula{
-      width:40%;
+      width:50%;
       display: table;
       float: left;
       text-align: center;
-      margin: 1%;
+      margin: 1.5%;
       max-width: 20%;
       height: 80px;
     }
-
   </style>
+
   <div class="menu-card">
     <div class ="divCuadricula">
       <h3></h3>
-      <img  />     
+      <img  /> 
+      <div id= "info" hidden>
+        <p></p> 
+      </div>
+      <button id = "hideShow"> Mostrar informacion </button>   
     </div> 
+
+    <script>
+      document.getElementById("hideShow").addEventListener(
+        "click", () => {
+          document.getElementById("info").hidden = false;
+        },
+        false
+      );
+    </script>
   </div>
+
+
 `;
 
 class MenuWebComponent extends HTMLElement{
@@ -39,6 +54,8 @@ class MenuWebComponent extends HTMLElement{
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this.shadowRoot.querySelector('h3').innerText = this.getAttribute('title');
     this.shadowRoot.querySelector('img').src = this.getAttribute('image');
+    this.shadowRoot.querySelector('p').innerText = this.getAttribute('descripcion');
+
   }
 
 }
