@@ -2,23 +2,31 @@ const template = document.createElement('template');
 template.innerHTML = `
   <style>
     h3 {
-      margin-left: 5%;
       color: black;
     }
 
-    .divCuadricula img{
+    .menu-card img{
       width: 230px;
-      height: 180px ;
+      height: 180px;
+      margin-left = 500px;
     }
 
-    .divCuadricula{
-      width:50%;
-      display: table;
+
+    .divCuadricula {
+			font-family: 'Poppins', sans-serif;
       float: left;
-      text-align: center;
-      margin: 1.5%;
-      max-width: 20%;
-      height: 80px;
+      text-align: left;
+			background: #deeee9;
+			width: 100%;
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			grid-gap: 10px;
+      margin-left = 50px;
+			margin-bottom: 15px;
+		}
+
+    .menu-card h1{
+      cursor: pointer;
     }
 
     .menu-card button{
@@ -32,14 +40,15 @@ template.innerHTML = `
   </style>
 
   <div class="menu-card">
-    <div class ="divCuadricula">
-      <h3></h3>
-      <img  /> 
-      <div id= "info" hidden>
-        <p></p> 
-      </div>
-      <button id = "hideShow"> Mostrar informacion </button>   
-    </div> 
+    <h1 id = "hideShow" onclick = "hideShow()" ></h1>
+    <div id= "platos">
+      <div class ="divCuadricula">
+          <img />
+          <div>
+            <h3></h3>
+            <p></p> 
+      </div> 
+    </div>
   </div>
 
 
@@ -57,6 +66,7 @@ class MenuWebComponent extends HTMLElement{
     this.shadowRoot.querySelector('h3').innerText = this.getAttribute('title');
     this.shadowRoot.querySelector('img').src = this.getAttribute('image');
     this.shadowRoot.querySelector('p').innerText = this.getAttribute('descripcion');
+    this.shadowRoot.querySelector('h1').innerText = this.getAttribute('name');
 
   }
 
@@ -64,7 +74,7 @@ class MenuWebComponent extends HTMLElement{
 	hideShow() {
 		this.showInfo= !this.showInfo;
 		
-		const info = this.shadowRoot.querySelector('#info');
+		const info = this.shadowRoot.querySelector('#platos');
 		const boton = this.shadowRoot.querySelector('#hideShow');
 		
 		if (this.showInfo) { 
@@ -100,6 +110,18 @@ window.customElements.define("menu-card", MenuWebComponent);
       </div>
     `,
   });
+
+  .menu-card{
+      width:50%;
+      display: table;
+      float: left;
+      text-align: center;
+      margin: 1.5%;
+      max-width: 20%;
+      height: 80px;
+    }
+
+    <button id = "hideShow"> Mostrar informacion </button> 
   
   new Vue({
     el: "#menu",
