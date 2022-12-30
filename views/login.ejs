@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title> Paradise Resort</title>
+    
+
+    
+   
+
+    
+
+    
+  </head>
+  <body>
+
+    <header id="cabecera">
+       <!--- <a href="/"><img class="logotipo" alt="logotipo" src="../img/Paradise_transparente.png"></a> -->
+        <nav id="navegacion">
+  
+            <ul id="izquierda">
+            <li class="listaNavegacion"><a href="/">Paradise Resort</a></li>
+            <li class="listaNavegacion"><a href="/">Instalaciones</a></li>
+            <li class="listaNavegacion"><a href="/">Ofertas</a></li>
+            
+            
+            
+            </ul>
+            <ul id="derecha">
+              <!-- <li class="listaNavegacion"><button class="login" id="login"> Iniciar sesión </button></li> -->
+              <li class="listaNavegacion"><a href="/">Cancelar</a></li>
+              
+            </ul>
+               
+        </nav>
+    </header>
+    
+    <input id="email" type="email" placeholder="Ingresa email">
+    <input id="contraseña" type="password" placeholder="Ingresa contraseña">
+    <button onclick="login()">Iniciar sesión</button>
+    <!--<button onclick="registrar()">Registrar</button>-->
+
+    
+    <script src="/javascripts/database.js"></script>
+    
+    <!--<script src="/public/javascripts/database.js"></script>-->
+
+    <!-- <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+  
+
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDI4HbhlpQpot5ZfHRgckU5hhGtSs07Gzs",
+        authDomain: "hotel-8994a.firebaseapp.com",
+        projectId: "hotel-8994a",
+        storageBucket: "hotel-8994a.appspot.com",
+        messagingSenderId: "782345019030",
+        appId: "1:782345019030:web:67e4c80427fcccf3b6ecb7",
+        measurementId: "G-VY0VFV415N"
+      };
+    
+
+      // Initialize Firebase
+      const firebase = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(firebase);
+    </script> -->
+    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js""></script>
+    <script type="module">
+
+      var config = {
+        apiKey: "AIzaSyDI4HbhlpQpot5ZfHRgckU5hhGtSs07Gzs",
+        authDomain: "hotel-8994a.firebaseapp.com",
+        projectId: "hotel-8994a",
+        storageBucket: "hotel-8994a.appspot.com",
+        messagingSenderId: "782345019030",
+        appId: "1:782345019030:web:67e4c80427fcccf3b6ecb7",
+        measurementId: "G-VY0VFV415N"
+      };
+
+     firebase.initializeApp(config);
+
+    </script>
+
+    
+  </body>
+</html>
