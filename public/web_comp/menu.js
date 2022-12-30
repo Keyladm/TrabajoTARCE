@@ -40,7 +40,6 @@ template.innerHTML = `
   </style>
 
   <div class="menu-card">
-    <h1 id = "hideShow" onclick = "hideShow()" ></h1>
     <div id= "platos">
       <div class ="divCuadricula">
           <img />
@@ -74,11 +73,12 @@ class MenuWebComponent extends HTMLElement{
 	hideShow() {
 		this.showInfo= !this.showInfo;
 		
+    this.getElementsByClassName("entrantes");
 		const info = this.shadowRoot.querySelector('#platos');
 		const boton = this.shadowRoot.querySelector('#hideShow');
 		
 		if (this.showInfo) { 
-			info.style.display = 'table';
+			info.style.display = 'grid';
 			toggleBtn.innerText = 'Ocultar informacion';
 		} else {
 			info.style.display = 'none';

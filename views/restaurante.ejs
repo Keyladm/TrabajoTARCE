@@ -18,10 +18,13 @@
       <h1>PARADISE RESORT RESTAURANT</h1>
     </header>
 
-    <h3 class = "title">Disfruta de nuestros exquisitos platos</h3>
+    <h1 class = "title">Disfruta de nuestros exquisitos platos</h1>
+    <h1 class = "title">~ MENU ~</h1>
 
-    <div id="menu">
-        <menu-card title = 'Pan de ajo' name = "Entrantes"
+    <div class="menu">
+      <h2 id = "entrantesShow" onclick = "hideShow(id, 'entrantes')">Entrantes</h2>
+      <div id = "entrantes" > 
+        <menu-card title = 'Pan de ajo'
           descripcion = "Pan recien horneado con ajo y mantequilla"
           image= "https://canalcocina.es/medias/images/0001020321MasasSaladasEp15PanDeHojaldreConSAjo2.jpg">  
         </menu-card>
@@ -46,10 +49,12 @@
         <menu-card title= 'Berenjenas fritas y miel' 
           descripcion = "Berenjenas rebozadas y fritas con miel de palma"
           image= 'https://www.restaurantescarmela.com/wp-content/uploads/2019/10/berenjenas-fritas-con-miel.jpg'></menu-card>
-
-        
+      </div>
+      
+      <h2 id = "pastasShow" onclick = "hideShow(id, 'pastas')">Pastas</h2>
+      <div id = "pastas"> 
         <menu-card title="Lasaña" 
-          descripcion = "Lasaña boloñesa" name = "Pastas"
+          descripcion = "Lasaña boloñesa" 
           image = "https://assets.unileversolutions.com/recipes-v2/232080.jpg"></menu-card>
         <menu-card title= 'Tortellini' 
           descripcion = "Tortellini rellenos de carne en salsa de champiñones y bacon"
@@ -60,23 +65,62 @@
         <menu-card title = "Ñoquis" 
           descripcion = "Ñoquis con salsa a la boloñesa"
           image = 'https://cdn.elcocinerocasero.com/imagen/receta/1000/2016-05-26-18-07-22/noquis-con-salsa-bolonesa.jpeg'></menu-card>
-
-        
-        <menu-card title = 'Barbacoa' name = "Pizzas" 
+      </div>
+      
+      <h2 id = "pizzasShow" onclick = "hideShow(id, 'pizzas')">Pizzas</h2>
+      <div id = "pizzas"> 
+        <menu-card title = 'Barbacoa'
           descripcion = "Pollo, bacon, carne molida y salsa barbacoa"
           image= "https://okdiario.com/img/2015/09/08/receta-pizza-barbacoa-655x368.jpg"></menu-card>
         <menu-card title= 'Carbonara' 
           descripcion = "Bacon, huevo, nata y champiñones"
           image= 'https://images.hola.com/imagenes/cocina/recetas/20200120158507/pizza-carbonara-con-huevo/0-770-845/pizza-carbonara-con-huevo-t.jpg'></menu-card>
         <menu-card title= 'Marinera' 
-          descripcion = "Atun y gambas, "
+          descripcion = "Atun y gambas"
           image= 'https://i.pinimg.com/originals/dc/aa/c2/dcaac2b0e856eb586932c0c0c5cc94e9.jpg'></menu-card>
         <menu-card title= '4 quesos' 
           descripcion = "Queso mozarela, gorgonzola, fontina y parmesano"
           image= 'https://recetinas.com/wp-content/uploads/2018/04/pizza-cuatro-quesos.jpg'></menu-card>
-        
+      </div>
+      
+      <h2 id = "postresShow" onclick = "hideShow(id, 'postres')">Postres</h2>
+      <div id = "postres"> 
+        <menu-card title = 'Coulant de chocolate'
+          descripcion = "Con helado de vainilla"
+          image= "https://wakame-ibiza.com/wp-content/uploads/2022/05/coulant.jpg"></menu-card>
+        <menu-card title= 'Tarta de manzana' 
+          descripcion = "Con helado de vainilla"
+          image= 'https://placeralplato.com/files/2018/10/Receta-de-tarta-de-manzana-con-helado-de-vainilla-y-salsa-caramelo.jpg'></menu-card>
+        <menu-card title= 'Tres leches' 
+          descripcion = "Con nata"
+          image= 'https://cuk-it.com/wp-content/uploads/2022/05/thumb03-1024x576.jpg'></menu-card>
+        <menu-card title= 'Brownie' 
+          descripcion = "Con helado de vainilla"
+          image= 'https://es.rc-cdn.community.thermomix.com/recipeimage/mefmdfat-fed33-856901-cfcd2-zjmzyp14/e9bc33a4-b95f-4cf3-b6a2-3730c1881abf/main/brownie-de-chocolate-con-helado-de-vanilla.jpg'></menu-card>
+      </div>
+
     </div>
 
+    <script>
+      showInfo = true;
+      document.getElementById('entrantes').style.display = 'none';
+      document.getElementById('pastas').style.display = 'none';
+      document.getElementById('pizzas').style.display = 'none';
+      document.getElementById('postres').style.display = 'none';
+
+      function hideShow(idBoton,idInfo) {
+        showInfo= !showInfo;
+
+        const info = document.getElementById(idInfo);
+        const boton = document.getElementById(idBoton);
+
+        if (showInfo) { 
+          info.style.display = 'grid';
+        } else {
+          info.style.display = 'none'; 
+          }
+      }
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
     <script src="/web_comp/menu.js"></script>
   </body>
