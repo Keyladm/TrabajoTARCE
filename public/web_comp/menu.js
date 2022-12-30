@@ -20,6 +20,15 @@ template.innerHTML = `
       max-width: 20%;
       height: 80px;
     }
+
+    .menu-card button{
+			cursor: pointer;
+      background-color: #47a386;
+			color: #fff;
+			border: 0;
+			border-radius: 5px;
+			padding: 10px 10px;
+		}
   </style>
 
   <div class="menu-card">
@@ -31,15 +40,6 @@ template.innerHTML = `
       </div>
       <button id = "hideShow"> Mostrar informacion </button>   
     </div> 
-
-    <script>
-      document.getElementById("hideShow").addEventListener(
-        "click", () => {
-          document.getElementById("info").hidden = false;
-        },
-        false
-      );
-    </script>
   </div>
 
 
@@ -50,6 +50,8 @@ class MenuWebComponent extends HTMLElement{
   constructor(){
     super();
 
+    this.showInfo = true;
+
     this.attachShadow({ mode: 'open'});
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this.shadowRoot.querySelector('h3').innerText = this.getAttribute('title');
@@ -57,6 +59,30 @@ class MenuWebComponent extends HTMLElement{
     this.shadowRoot.querySelector('p').innerText = this.getAttribute('descripcion');
 
   }
+
+  
+	hideShow() {
+		this.showInfo= !this.showInfo;
+		
+		const info = this.shadowRoot.querySelector('#info');
+		const boton = this.shadowRoot.querySelector('#hideShow');
+		
+		if (this.showInfo) { 
+			info.style.display = 'table';
+			toggleBtn.innerText = 'Ocultar informacion';
+		} else {
+			info.style.display = 'none';
+			toggleBtn.innerText = 'Mostrar informacion';	  
+		  }
+	}
+	
+	connectedCallback() {
+		this.shadowRoot.querySelector('#hideShow'). addEventListener('click', () => this.hideShow());
+	}
+	
+	disconnectedCallback() {
+		this.shadowRoot.querySelector('#hideShow'). removeEventListener();
+	}
 
 }
 
