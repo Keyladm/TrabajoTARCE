@@ -6,8 +6,11 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     
     <title> Paradise Resort</title>
+
+
   </head>
   <body>
+    <script src="/public/javascripts/database.js"></script>
     <header id="cabecera">
       <a href="/">
         <img class="logotipo" alt="logotipo" src="/img/paradise_transparente.png">
@@ -23,7 +26,8 @@
           
           </ul>
           <ul id="derecha">
-            <li class="listaNavegacion"><button class="login" id="login"> Iniciar sesión </button></li>
+            <li class="listaNavegacion"><button class="login" id="login"> Iniciar sesión </button></li> 
+            <!--<li class="listaNavegacion"><a href="/login">Iniciar sesión</a></li>-->
             
           </ul>
              
@@ -84,13 +88,15 @@
     <div class = "form-login" id = "form_login">
       <div class="modal-sesion">
         <h1> Inicio sesión </h1>
-        <input class="controls" type="text" name="usuario" value="" placeholder="Usuario">
-        <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña">
-        <input class="buttons" type="submit" name="" value="Ingresar">
+        <input class="controls" id="email" type="email" name="usuario" value="" placeholder="Usuario">
+        <input class="controls" id="contraseña" type="password" name="contrasena" value="" placeholder="Contraseña">
+        <!--<input class="buttons" type="submit" name="" value="Ingresar">-->
+        <button class="buttons" id = "init_sesion" onclick="inicio()"> Iniciar sesión </button>
         <button class="buttons" id = "cancel_sesion"> Cancelar </button>
         <p><a href="#">¿Olvidastes tu contraseña?</a></p>
       </div>
     </div>
+    
     <script>
       const login = document.getElementById('login');
       const modal = document.getElementById('form_login');
@@ -103,8 +109,13 @@
       cancel.addEventListener('click', () =>{
           modal.classList.remove('show');
       });
+<<<<<<< HEAD
     </script> 
     
+=======
+    </script>
+    <script src="/javascripts/database.js"></script>
+>>>>>>> 6e7bbc3 (sesion)
     <footer id="piePagina">
      No dude en ponerse en contacto con nosotros
      <br>
@@ -114,5 +125,22 @@
      <br>
      Facebook: ParadiseResort
     </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js""></script>
+    <script type="module">
+
+      var config = {
+        apiKey: "AIzaSyDI4HbhlpQpot5ZfHRgckU5hhGtSs07Gzs",
+        authDomain: "hotel-8994a.firebaseapp.com",
+        projectId: "hotel-8994a",
+        storageBucket: "hotel-8994a.appspot.com",
+        messagingSenderId: "782345019030",
+        appId: "1:782345019030:web:67e4c80427fcccf3b6ecb7",
+        measurementId: "G-VY0VFV415N"
+      };
+
+     firebase.initializeApp(config);
+
+    </script>
   </body>
 </html>

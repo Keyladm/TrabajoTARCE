@@ -1,3 +1,5 @@
+
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -6,6 +8,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var restauranteRouter = require('./routes/restaurante');
+var loginRouter = require('./routes/login');
+var camareroRouter = require('./routes/camarero');
 
 var app = express();
 
@@ -21,6 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/restaurante', restauranteRouter);
+app.use('/login', loginRouter);
+app.use('/camarero', camareroRouter);
 
 
 // catch 404 and forward to error handler
