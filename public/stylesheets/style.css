@@ -47,10 +47,6 @@ button {
   border-bottom: #47a386 5px solid;
 }
 
-.show {
-  pointer-events: auto;
-  opacity: 1;
-}
 
 .form-login {
   display: flex;
@@ -65,6 +61,11 @@ button {
   height: 100vh;
   width: 100vw;
   transition: opacity 0.3s ease;
+}
+
+.show {
+  pointer-events: auto;
+  opacity: 1;
 }
 
 .modal-sesion {
