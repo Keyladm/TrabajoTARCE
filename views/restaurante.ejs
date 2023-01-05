@@ -22,7 +22,7 @@
     <h1 class = "title">~ MENU ~</h1>
 
     <div class="menu">
-      <h2 id = "entrantesShow" onclick = "hideShow(id, 'entrantes')">Entrantes</h2>
+      <h2 id = "entrantesShow" onclick = "hideShow('entrantes')">Entrantes</h2>
       <div id = "entrantes" > 
         <menu-card title = 'Pan de ajo'
           descripcion = "Pan recien horneado con ajo y mantequilla"
@@ -51,7 +51,7 @@
           image= 'https://www.restaurantescarmela.com/wp-content/uploads/2019/10/berenjenas-fritas-con-miel.jpg'></menu-card>
       </div>
       
-      <h2 id = "pastasShow" onclick = "hideShow(id, 'pastas')">Pastas</h2>
+      <h2 id = "pastasShow" onclick = "hideShow('pastas')">Pastas</h2>
       <div id = "pastas"> 
         <menu-card title="Lasaña" 
           descripcion = "Lasaña boloñesa" 
@@ -67,7 +67,7 @@
           image = 'https://cdn.elcocinerocasero.com/imagen/receta/1000/2016-05-26-18-07-22/noquis-con-salsa-bolonesa.jpeg'></menu-card>
       </div>
       
-      <h2 id = "pizzasShow" onclick = "hideShow(id, 'pizzas')">Pizzas</h2>
+      <h2 id = "pizzasShow" onclick = "hideShow('pizzas')">Pizzas</h2>
       <div id = "pizzas"> 
         <menu-card title = 'Barbacoa'
           descripcion = "Pollo, bacon, carne molida y salsa barbacoa"
@@ -83,7 +83,7 @@
           image= 'https://recetinas.com/wp-content/uploads/2018/04/pizza-cuatro-quesos.jpg'></menu-card>
       </div>
       
-      <h2 id = "postresShow" onclick = "hideShow(id, 'postres')">Postres</h2>
+      <h2 id = "postresShow" onclick = "hideShow('postres')">Postres</h2>
       <div id = "postres"> 
         <menu-card title = 'Coulant de chocolate'
           descripcion = "Con helado de vainilla"
@@ -102,17 +102,16 @@
     </div>
 
     <script>
-      showInfo = true;
+      showInfo = false;
       document.getElementById('entrantes').style.display = 'none';
       document.getElementById('pastas').style.display = 'none';
       document.getElementById('pizzas').style.display = 'none';
       document.getElementById('postres').style.display = 'none';
 
-      function hideShow(idBoton,idInfo) {
+      function hideShow(idInfo) {
         showInfo= !showInfo;
 
         const info = document.getElementById(idInfo);
-        const boton = document.getElementById(idBoton);
 
         if (showInfo) { 
           info.style.display = 'grid';
@@ -121,7 +120,6 @@
           }
       }
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
     <script src="/web_comp/menu.js"></script>
   </body>
 </html>

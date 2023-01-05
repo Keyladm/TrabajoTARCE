@@ -12,7 +12,7 @@ template.innerHTML = `
     }
 
 
-    .divCuadricula {
+    .menu-card {
 			font-family: 'Poppins', sans-serif;
       float: left;
       text-align: left;
@@ -25,31 +25,14 @@ template.innerHTML = `
 			margin-bottom: 15px;
 		}
 
-    .menu-card h1{
-      cursor: pointer;
-    }
-
-    .menu-card button{
-			cursor: pointer;
-      background-color: #47a386;
-			color: #fff;
-			border: 0;
-			border-radius: 5px;
-			padding: 10px 10px;
-		}
   </style>
 
   <div class="menu-card">
-    <div id= "platos">
-      <div class ="divCuadricula">
-          <img />
-          <div>
-            <h3></h3>
-            <p></p> 
-      </div> 
-    </div>
+    <img />
+    <div>
+      <h3></h3>
+      <p></p> 
   </div>
-
 
 `;
 
@@ -66,33 +49,7 @@ class MenuWebComponent extends HTMLElement{
     this.shadowRoot.querySelector('img').src = this.getAttribute('image');
     this.shadowRoot.querySelector('p').innerText = this.getAttribute('descripcion');
     this.shadowRoot.querySelector('h1').innerText = this.getAttribute('name');
-
   }
-
-  
-	hideShow() {
-		this.showInfo= !this.showInfo;
-		
-    this.getElementsByClassName("entrantes");
-		const info = this.shadowRoot.querySelector('#platos');
-		const boton = this.shadowRoot.querySelector('#hideShow');
-		
-		if (this.showInfo) { 
-			info.style.display = 'grid';
-			toggleBtn.innerText = 'Ocultar informacion';
-		} else {
-			info.style.display = 'none';
-			toggleBtn.innerText = 'Mostrar informacion';	  
-		  }
-	}
-	
-	connectedCallback() {
-		this.shadowRoot.querySelector('#hideShow'). addEventListener('click', () => this.hideShow());
-	}
-	
-	disconnectedCallback() {
-		this.shadowRoot.querySelector('#hideShow'). removeEventListener();
-	}
 
 }
 
