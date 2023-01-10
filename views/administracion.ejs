@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title> Paradise Resort</title>
+    
+
+    
+   
+
+    
+
+    
+  </head>
+  <body>
+
+    <header id="cabecera_rest">
+      <nav id="navegacion">
+      <a href="/">
+        <img class="logotipo" alt="logotipo" src="/img/paradise_transparente.png">
+      </a> 
+      
+      <h1>ADMINISTRACIÓN</h1>
+      
+      <ul id="derecha">
+      <li class="listaNavegacion"><button class="login" id="login" onclick="cerrar()"> Cerrar sesión </button></li>
+      <script src="/javascripts/database.js"></script>
+      </ul> 
+    </nav>
+    </header>
+    
+    <h2>Balance del hotel:</h2>
+
+    <iframe title="informe - 21/22" width="1024" height="1060" src="https://app.powerbi.com/view?r=eyJrIjoiOWY1MzY5NDctOWRlMC00MmUwLWI0ZDEtNGExZTYwYmIwMDczIiwidCI6ImIyYmI3MzFjLTQ2MGQtNDIwZi1hNDc1LTNlZDYxNWE4Mjk4NyIsImMiOjh9" frameborder="0" allowFullScreen="true"></iframe> 
+
+    
+    
+    
+    
+    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js""></script>
+    <script type="module">
+
+      var config = {
+        apiKey: "AIzaSyDI4HbhlpQpot5ZfHRgckU5hhGtSs07Gzs",
+        authDomain: "hotel-8994a.firebaseapp.com",
+        projectId: "hotel-8994a",
+        storageBucket: "hotel-8994a.appspot.com",
+        messagingSenderId: "782345019030",
+        appId: "1:782345019030:web:67e4c80427fcccf3b6ecb7",
+        measurementId: "G-VY0VFV415N"
+      };
+
+     firebase.initializeApp(config);
+
+    </script>
+   
+
+    
+  </body>
+</html>
