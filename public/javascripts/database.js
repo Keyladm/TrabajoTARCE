@@ -27,10 +27,17 @@ function inicio(){
     firebase.auth().onAuthStateChanged(function(user){
         if(user){
             var email = user.email;
-            console.log('Existe usuario activo')
+            console.log(email)
+            if(email.indexOf('camarero') !== -1){
+                window.location.href = "/restaurante";
+            }else if(email.indexOf('admin') !== -1){
+                window.location.href = "/administracion";
+            }else{
+                window.location.href = "/usuario";
+            }
             //var usuario = document.getElementById('nombre');
             //usuario.innerHTML = "Juan";
-            window.location.href = "/camarero";
+            
             
             
 
