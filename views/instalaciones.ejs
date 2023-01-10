@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title> Paradise Resort</title>
+  </head>
+  
+  <body>
+
+    <header id="cabecera_rest">
+      <a href="/">
+        <img class="logotipo" alt="logotipo" src="/img/paradise_transparente.png">
+      </a> 
+      
+      <nav id="navegacion">
+  
+        <ul id="izquierda">
+        <li class="listaNavegacion"><a href="/">Paradise Resort</a></li>
+        <li class="listaNavegacion"><a href="/instalaciones">Instalaciones</a></li>
+        <li class="listaNavegacion"><a href="/">Ofertas</a></li>
+        
+        
+        
+        </ul>
+        <ul id="derecha">
+          <!-- <li class="listaNavegacion"><button class="login" id="login"> Iniciar sesión </button></li> -->
+          <li class="listaNavegacion"><div id="nombre"></div></li>
+          <li class="listaNavegacion"><button class="login" id="login" onclick="cerrar()"> Cerrar sesión </button></li>
+          <script src="/javascripts/database.js"></script> 
+          
+        </ul>
+           
+    </nav>
+    </header>
+
+    <h1 class = "title">Nuestras insalaciones en el hotel</h1>
+    
+
+    
+
+    <div class="menu">
+      <h2 id = "comunesShow" onclick = "hideShow('comunes')">Instalaciones comúnes</h2>
+      <div id = "comunes" > 
+        <menu-card title = 'Piscina para niños'
+          descripcion = "Piscina de 1 metro para niños con columpios"
+          image= "https://blog.centraldereservas.com/wp-content/uploads/2022/05/destacada-hotel-best-lloret-splash.jpg">  
+        </menu-card>
+        <menu-card title= 'Piscina para todo el público' 
+          descripcion = "Prohibido el acceso a niños"
+          image= 'https://media-cdn.tripadvisor.com/media/photo-s/21/5e/65/42/bteg-pool.jpg'></menu-card>
+        <menu-card title= 'Piscina para adultos' 
+          descripcion = "Prohibido el acceso a niños"
+          image= 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hotel-w-maldivas-1530440521.jpg'></menu-card>
+        <menu-card title= 'Gimnasio' 
+          descripcion = "Gimnasio con máquinas para hacer cardio y máquinas de musculación"
+          image= 'https://images.neobookings.com/1920x1080/cms/hoteltorredelmar.com/section/24-hours-gym/pics/24-hours-gym-r0lg4mkl4m.jpeg'></menu-card>
+      </div>
+      
+      <h2 id = "habitacionesShow" onclick = "hideShow('habitaciones')">Habitaciones</h2>
+      <div id = "habitaciones"> 
+        <menu-card title="Sencilla" 
+          descripcion = "Habitación para una persona" 
+          image = "https://images.mirai.com/INFOROOMS/67140298/nQHI0jthTuUW9CWXWaCO/nQHI0jthTuUW9CWXWaCO_large.jpg"></menu-card>
+        <menu-card title= 'Doble' 
+          descripcion = "Habitación para dos personas"
+          image = "https://images.mirai.com/INFOROOMS/67140298/nQHI0jthTuUW9CWXWaCO/nQHI0jthTuUW9CWXWaCO_large.jpg"></menu-card>
+        <menu-card title = 'Familiar' 
+          descripcion = "Habitación para dos personas y dos niños"
+          image = "https://images.mirai.com/INFOROOMS/67140298/yeNzUS9D6VRvV5BxeZSo/yeNzUS9D6VRvV5BxeZSo_large.jpg"></menu-card>
+        <menu-card title = "Suite" 
+          descripcion = "Suite de lujo para dos personas "
+          image = 'https://images.mirai.com/INFOROOMS/67140298/DXVgs8CH2RhD3PVuxbmg/DXVgs8CH2RhD3PVuxbmg_large.jpg'></menu-card>
+      </div>
+
+    </div>
+
+    <script>
+      showInfo = false;
+      document.getElementById('habitaciones').style.display = 'none';
+      document.getElementById('comunes').style.display = 'none';
+
+
+      function hideShow(idInfo) {
+        showInfo= !showInfo;
+
+        const info = document.getElementById(idInfo);
+
+        if (showInfo) { 
+          info.style.display = 'grid';
+        } else {
+          info.style.display = 'none'; 
+          }
+      }
+    </script>
+    <script src="/web_comp/menu.js"></script>
+  </body>
+</html>
+

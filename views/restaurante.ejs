@@ -14,17 +14,30 @@
       <a href="/">
         <img class="logotipo" alt="logotipo" src="/img/paradise_transparente.png">
       </a> 
+
+      <nav id="navegacion">
+  
+        <ul id="izquierda">
+        <li class="listaNavegacion"><a href="/">Paradise Resort</a></li>
+        <li class="listaNavegacion"><a href="/instalaciones">Instalaciones</a></li>
+        <li class="listaNavegacion"><a href="/">Ofertas</a></li>                        
+        </ul>
+        <ul id="derecha">
+          <!-- <li class="listaNavegacion"><button class="login" id="login"> Iniciar sesión </button></li> -->
+          <li class="listaNavegacion"><div id="nombre"></div></li>
+          <li class="listaNavegacion"><button class="login" id="login" onclick="cerrar()"> Cerrar sesión </button></li>
+          <script src="/javascripts/database.js"></script> 
+          
+        </ul>
+           
+      </nav>
       
-      <h1>PARADISE RESORT RESTAURANT</h1>
     </header>
 
-    <h1 class = "title">Disfruta de nuestros exquisitos platos</h1>
+    <h1 class = "title">PARADISE RESORT RESTAURANT</h1>
     <h1 class = "title">~ MENU ~ 
       <a href="/cartavirtual"> (Menu virtual) </a>
     </h1>
-    
-
-    
 
     <div class="menu">
       <h2 id = "entrantesShow" onclick = "hideShow('entrantes')">Entrantes</h2>

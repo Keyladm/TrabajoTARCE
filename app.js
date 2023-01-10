@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var restauranteRouter = require('./routes/restaurante');
 var camareroRouter = require('./routes/camarero');
 var aumentadaRouter = require('./routes/cartavirtual');
+var instalacionesRouter = require('./routes/instalaciones');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use('/', indexRouter);
 app.use('/restaurante', restauranteRouter);
 app.use('/camarero', camareroRouter);
 app.use('/cartavirtual', aumentadaRouter);
+app.use('/instalaciones', instalacionesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
