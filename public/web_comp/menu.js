@@ -48,7 +48,6 @@ class MenuWebComponent extends HTMLElement{
     this.shadowRoot.querySelector('h3').innerText = this.getAttribute('title');
     this.shadowRoot.querySelector('img').src = this.getAttribute('image');
     this.shadowRoot.querySelector('p').innerText = this.getAttribute('descripcion');
-    this.shadowRoot.querySelector('h1').innerText = this.getAttribute('name');
   }
 
 }
